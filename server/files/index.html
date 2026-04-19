@@ -1,13 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movies!</title>
-    <link rel="stylesheet" href="index.css" />
-    <script src="index.js"></script>
-  </head>
 
-  <body>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies!</title>
+    <style>
+        h1 {
+        font-family: Arial, sans-serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+         color: black;
+        text-align: left top;
+        margin: 20px 0px 40px 0px; /*oben - rechts - unten - links*/
+        }
+        body {
+            display: flex;
+            justify-content: space-between;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: lightblue;
+            /*background-image:
+                linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+                url('Studio_Ghibli_logo.png');
+            background-repeat: repeat-y;
+            background-position: right top;
+            background-size: 500px auto;*/
+        }
+
+        .layout {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .content {
+            flex: 1
+        }
+
+        .background {
+            flex: 1;
+            background-image: url('Studio_Ghibli_logo.png');
+            background-repeat: repeat-y;
+            background-position: right top;
+            background-size: 500px auto;
+        }
+
+        ol {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            padding-left: 0;
+            list-style-type: none; /* sonst Zahlen dabei */
+        }
+
+        
+        li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 220px; /* gleiche Breite wie Poster */
+            margin: 0 20px 40px 0; /* Abstand zwischen den Filmen */
+        }
+        
+
+        .movie-poster {
+            width: 220px;
+            height: 330px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 3.00rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <body>
+    <h1>LiLi's Favourite Studio Ghibli Movies</h1>
+
+    <div class="content">
+        <ol id="movie-list"></ol>
+        <ol>
+        <li>Test 1</li>
+        <li>Test 2</li>
+</ol>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</body>
+
 </html>
