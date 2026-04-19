@@ -9,13 +9,24 @@ window.onload = function () {
       for (const movie of movies) {
         const movieElement = document.createElement("li");
         movieElement.id = movie.imdbID;
-        const posterHtml = movie.Poster && movie.Poster !== "N/A"
-          ? `<img src="${movie.Poster}" alt="Poster von ${movie.Title}" class="movie-poster">`
-          : "";
+        const poster = document.createElement("img");
+        poster.classList.add("movie-poster");
 
-        movieElement.innerHTML = `
-          ${posterHtml}
-          <strong>${movie.Title}</strong><br>
+        if (movie.Poster && movie.Poster !== "N/A") {
+          poster.src = movie.Poster;
+        } 
+
+        poster.alt = "Poster von " + movie.Title;
+        movieElement.appendChild(poster);
+
+        const movieText = document.createElement("div");
+        movieText.classList.add("movie-text");
+
+        const title = document.createElement("h2");
+        title.textContent = movie.Title;
+
+        const data = document.createElement("div");
+        data.innerHTML = `
           Genres: ${movie.Genres.join(", ")}<br>
           Directors: ${movie.Directors.join(", ")}<br>
           Writers: ${movie.Writers.join(", ")}<br>
@@ -26,12 +37,17 @@ window.onload = function () {
           Metascore: ${movie.Metascore}<br>
           IMDB Rating: ${movie.imdbRating}
         `;
+
+        movieText.appendChild(title);
+        movieText.appendChild(data);
+        movieElement.appendChild(movieText);
+
         const editButton = document.createElement("button");
         editButton.textContent = "Edit";
         editButton.onclick = function() {
           location.href = 'edit.html?imdbID=' + movie.imdbID;
         };
-        movieElement.appendChild(editButton);
+        movieText.appendChild(editButton);
         list.append(movieElement);
       }
     } else {

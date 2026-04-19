@@ -13,7 +13,7 @@ const movies = [
     "From Up on Poppy Hill"
  ];
 const fields = [
-  "Released", "Runtime","Actors", "Plot", "Poster", "Metascore", "imdbRating"
+  "Title","Released", "Runtime","Actors", "Plot", "Poster", "Metascore", "imdbRating"
 ];
 
 // Serve static content in directory 'files'
